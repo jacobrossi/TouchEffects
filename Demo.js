@@ -68,22 +68,12 @@ function setupWorld() {
     addParticles();
     
     // Determine correct events to register for
-    if(navigator.msPointerEnabled) {
-		console.log("Pointers supported");
-        downevent = "MSPointerDown";
-        upevent = "MSPointerUp";
-        moveevent = "MSPointerMove";
-        document.addEventListener("MSPointerCancel", function(e){ removeTouchPoint(e); }, false);
-        document.addEventListener("MSGestureInit", function(e){ if(e.preventManipulation) e.preventManipulation(); }, false);
-        document.addEventListener("MSHoldVisual", function(e){ e.preventDefault(); }, false);
-    }
-    else {
-		console.log("Pointers not supported. Defaulting to mouse events.");
-        downevent = "mousedown";
-        upevent = "mouseup";
-        moveevent = "mousemove";
-    }
-    
+    downevent = "pointerdown";
+    upevent = "pointerup";
+    moveevent = "pointermove";
+    document.addEventListener("pointercancel", function(e){ removeTouchPoint(e); }, false);
+    document.addEventListener("MSHoldVisual", function(e){ e.preventDefault(); }, false);
+
     // Register invariant events
     canvasElm.addEventListener(downevent, addTouchPoint, false);
     document.addEventListener(upevent, removeTouchPoint, false);

@@ -98,5 +98,5 @@
 
 #canvas {
     background-color: #000;
-    -ms-touch-action: none;
+    touch-action: none;
 }
