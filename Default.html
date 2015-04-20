@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Copyright © Microsoft Corporation. All Rights Reserved. -->
+    <!-- Demo Author: Matt Rakow, Microsoft Corporation -->   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Touch your way to a faster experience." />
+    <meta name="t_omni_demopage" content="1" />
+    <title>Touch Effects</title>
+
+    <link rel="image_src" href="../../Views/Homepage/Icons/TouchEffects.png" />
+
+    <link rel="stylesheet" type="text/css" href="../../Includes/Styles/BaseStyles.css" />
+    <link rel="stylesheet" type="text/css" href="../../Includes/Styles/ReturnAndShareControls.css" />
+    <link rel="stylesheet" type="text/css" href="Demo.css" />
+    <link rel="shortcut icon" href="../../Includes/Image/FavIcon.ico" /> 
+    <script src="https://rawgit.com/arschmitz/PEP/0.3.0-dist-pre/dist/PEP.min.js"></script>   
+    <script type="text/javascript" src="../../Includes/Script/FeatureDetection.js" data-detect="canvas"></script>
+</head>
+<body onload="setupWorld()">
+    <div id="ReturnAndShareControls"></div>
+    <h1 id="DemoTitle">
+        Touch Effects
+    </h1>
+    <div id="DemoScreenreaderText">
+        This page contains a canvas element registered for DOM touch events.  Special effects are applied in response to touch and gesture on the canvas. The buttons control simulation settings.  This demo supports multitouch on Windows 8.
+    </div>
+    <div id="DemoContent">
+        <div id="DemoControls">
+            <div class="controlgroup">
+                <div class="controlgroupheader">
+                    Physics mode
+                </div>
+                <div class="controlbuttongroup">
+                    <button id="gravitybutton" class="controlbutton controlbuttonon">Gravity Wells</button>
+                    <button id="repulsionbutton" class="controlbutton">Magnetic Repulsion</button>
+                </div>
+            </div>
+            <div class="controlgroup">
+                <div class="controlgroupheader">
+                    Particle tethers
+                </div>
+                <div class="controlbuttongroup">
+                    <button id="tetheroffbutton" class="controlbutton controlbuttonon">Off</button>
+                    <button id="tetheronbutton" class="controlbutton">On</button>
+                </div>
+            </div>
+            <div class="controlgroup">
+                <div class="controlgroupheader">
+                    Draw mode
+                </div>
+                <div class="controlbuttongroup">
+                    <button id="rainbowbutton" class="controlbutton controlbuttonon">Rainbows</button>
+                    <button id="ballbutton" class="controlbutton">Balls</button>
+                    <button id="circlebutton" style="display: none;" class="controlbutton">Circles</button>
+                    <button id="beebutton" style="display: none;" class="controlbutton">Bees!</button>
+                </div>
+            </div>
+            <div class="controlgroup">
+                <div class="controlgroupheader">
+                    Blur effect
+                </div>
+                <div class="controlbuttongroup">
+                    <button id="bluroffbutton" class="controlbutton">Off</button>
+                    <button id="bluronbutton" class="controlbutton controlbuttonon">On</button>
+                </div>
+            </div>
+            <div id="democontrolsgripper"></div>
+        </div>
+        <canvas id="canvas" width='800' height='600'></canvas>
+    </div>
+    <img id="rainbowstrip" style="display: none;" alt="Rainbow Strip" src="rainbowstrip.png" />
+    <img id="ball" style="display: none;" alt="Ball" src="ball.png" />
+    <img id="circle" style="display: none;" alt="Circle" src="circle.png" />
+    <img id="bee" style="display: none;" alt="Bee" src="bee.png" />
+    
+    <script type="text/javascript" src="Demo.js"></script>
+    
+    <script type="text/javascript" src="../../Includes/Script/TestDriveCommon.js"></script>
+    <script type="text/javascript" src="../../Includes/Script/ReturnAndShareControls.js"></script>
+</body>
+</html>
